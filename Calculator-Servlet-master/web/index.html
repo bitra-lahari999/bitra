@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kalkulator Servlet</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <center>
+        
+    <h1>Kalkulator Servlet</h1>
+
+    <form action="Calculate" method="post">
+        Tall 1: <input type="text" name="n1"><br>
+        Tall 2: <input type="text" name="n2"><br>
+        <br> Velg utregningsmetode <br>
+        <b> 
+        <input type="radio" name="type" value="+" /> +
+        <input type="radio" name="type" value="-" /> -
+        <input type="radio" name="type" value="*" /> *
+        <input type="radio" name="type" value="/" /> /
+        </b>
+        <br><br>
+        <input type="submit" value="Gjør utregning">
+        <p></p>
+            <script>
+                var GET = {};
+                var param = "0";
+                var query = window.location.search.substring(1).split("&");
+                for (var i = 0, max = query.length; i < max; i++){
+                    var param = query[i].split("=");
+                    GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
+            }
+                if(GET.result){
+                     document.write("Resultat = " + GET.result);
+                }
+                else {
+                   
+                }
+            </script> 
+            
+        </form>
+        </center>
+    </body>
+</html>
